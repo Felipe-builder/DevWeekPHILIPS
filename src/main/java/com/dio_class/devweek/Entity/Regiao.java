@@ -7,11 +7,13 @@ public class Regiao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false)
+    @Column( name = "id", nullable = false)
     private Long id;
 
+    @Column(name = "regiao")
     private String regiao;
 
+    @Column(name = "qnt_exames")
     private Long qntExames;
 
     public Regiao(Long id, String regiao, Long qntExames) {
@@ -25,10 +27,6 @@ public class Regiao {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getRegiao() {
