@@ -22,28 +22,27 @@ public class RegiaoController {
     }
 
     @GetMapping(value = "/regioes")
-    public List<Regiao> getRegiao(){
+    public List<Regiao> findAll(){
         return regiaoRepository.findAll();
     }
 
     @GetMapping(value = "/regioes/{id}")
-    public ResponseEntity<?> getRegiaoById(@PathVariable Long id) {
-        Optional regiaoRepositoryById = regiaoRepository.findById(id);
+    public ResponseEntity<?> findById(@PathVariable Long id) {
+        Optional<Regiao> regiaoRepositoryById = regiaoRepository.findById(id);
         if (regiaoRepositoryById.isPresent()){
-            Object regiaoEscolhida = regiaoRepositoryById.get();
+            Regiao regiaoEscolhida = regiaoRepositoryById.get();
             return new ResponseEntity<>(regiaoEscolhida, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @PostMapping(value = "/regioes/novo")
-    public Regiao putRegiao(@RequestBody Regiao newRegiao){
+    public Regiao create(@RequestBody Regiao newRegiao){
         return regiaoRepository.save(newRegiao);
     }
 
     @DeleteMapping(value = "/regioes/delete/{id}")
-    public void deleteRegiao(@PathVariable Long id) {
+    public void deleteById(@PathVariable Long id) {
         regiaoRepository.deleteById(id);
-
     }
 }
