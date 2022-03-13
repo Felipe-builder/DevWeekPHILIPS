@@ -18,7 +18,7 @@ public class FaixaEtariaController {
     private FaixaEtariaRepository faixaEtariaRepository;
 
     @GetMapping(value = "/faixaetarias")
-    public ResponseEntity<?> findAll(){
+    public ResponseEntity<List<FaixaEtaria>> findAll(){
         try {
             List<FaixaEtaria> list = faixaEtariaRepository.findAll();
             return new ResponseEntity<>(list, HttpStatus.OK);
@@ -29,7 +29,7 @@ public class FaixaEtariaController {
     }
 
     @GetMapping(value = "/faixaetarias/{id}")
-    public ResponseEntity<?> findById(@PathVariable Long id) {
+    public ResponseEntity<FaixaEtaria> findById(@PathVariable Long id) {
         Optional<FaixaEtaria> regiaoRepositoryById = faixaEtariaRepository.findById(id);
         if (regiaoRepositoryById.isPresent()){
             FaixaEtaria faixaEtariaEscolhida = regiaoRepositoryById.get();

@@ -19,7 +19,7 @@ public class IncidenciaController {
     private IncidenciaRepository incidenciaRepository;
 
     @GetMapping(value = "/incidencias")
-    public ResponseEntity<?> findAll(){
+    public ResponseEntity<List<Incidencia>> findAll(){
         try {
             List<Incidencia> list = incidenciaRepository.findAll();
             return new ResponseEntity<>(list, HttpStatus.OK);
@@ -30,7 +30,7 @@ public class IncidenciaController {
     }
 
     @GetMapping(value = "/incidencias/{id}")
-    public ResponseEntity<?> findById(@PathVariable Long id) {
+    public ResponseEntity<Incidencia> findById(@PathVariable Long id) {
         Optional<Incidencia> regiaoRepositoryById = incidenciaRepository.findById(id);
         if (regiaoRepositoryById.isPresent()){
             Incidencia faixaEtariaEscolhida = regiaoRepositoryById.get();
