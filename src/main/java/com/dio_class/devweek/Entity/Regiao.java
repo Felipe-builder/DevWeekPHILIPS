@@ -13,13 +13,13 @@ public class Regiao {
     @Column(name = "regiao")
     private String regiao;
 
-    @Column(name = "qnt_exames")
-    private Long qntExames;
+    @Column(name = "total")
+    private Long total;
 
-    public Regiao(Long id, String regiao, Long qntExames) {
+    public Regiao(Long id, String regiao, Long total) {
         this.id = id;
         this.regiao = regiao;
-        this.qntExames = qntExames;
+        this.total = total;
     }
 
     public Regiao() {
@@ -37,11 +37,11 @@ public class Regiao {
         this.regiao = regiao;
     }
 
-    public Long getQntExames() {
-        return qntExames;
+    public Long getTotal() {
+        return total;
     }
 
-    public void setQntExames(Long qntExames) {
-        this.qntExames = qntExames;
+    public void setTotal(Long total) {
+        this.total = total;
     }
 }

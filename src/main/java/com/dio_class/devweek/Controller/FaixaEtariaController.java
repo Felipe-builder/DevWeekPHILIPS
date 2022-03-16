@@ -1,7 +1,6 @@
 package com.dio_class.devweek.Controller;
 
 import com.dio_class.devweek.Entity.FaixaEtaria;
-import com.dio_class.devweek.Entity.Regiao;
 import com.dio_class.devweek.Repository.FaixaEtariaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/api")
 public class FaixaEtariaController {
 
     @Autowired

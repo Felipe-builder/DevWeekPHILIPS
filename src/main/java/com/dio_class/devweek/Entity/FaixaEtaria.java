@@ -13,13 +13,13 @@ public class FaixaEtaria {
     @Column( name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "faixa_i")
+    @Column(name = "Faixa_i")
     private Long faixaI;
 
-    @Column(name = "faixa_n")
+    @Column(name = "Faixa_n")
     private Long faixaN;
 
-    @Column(name = "descricao")
+    @Column(name = "Descricao")
     private String descricao;
 
     public FaixaEtaria(Long id, Long faixaI, Long faixaN, String descricao) {

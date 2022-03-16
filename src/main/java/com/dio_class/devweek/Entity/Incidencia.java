@@ -19,9 +19,9 @@ public class Incidencia {
     private Long faixaId;
 
     @Column(name = "Qnt_exames")
-    private String qntExames;
+    private Long qntExames;
 
-    public Incidencia(Long id, Integer regiaoId, Integer mes, Long faixaId, String qntExames) {
+    public Incidencia(Long id, Integer regiaoId, Integer mes, Long faixaId, Long qntExames) {
         this.id = id;
         this.regiaoId = regiaoId;
         this.mes = mes;
@@ -60,11 +60,11 @@ public class Incidencia {
         this.faixaId = faixaId;
     }
 
-    public String getQntExames() {
+    public Long getQntExames() {
         return qntExames;
     }
 
-    public void setQntExames(String qntExames) {
+    public void setQntExames(Long qntExames) {
         this.qntExames = qntExames;
     }
 }
